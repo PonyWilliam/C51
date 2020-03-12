@@ -1,0 +1,55 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/12/2020  10:54:49  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE C:\USERS\WILLIAM\DESKTOP\VSCODE-C51-MASTER\ENVIRONMENT\C51S.LIB, MAIN.OBJ, STARTUP.OBJ, UART.OB
+>> J TO MAIN
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  MAIN.OBJ (MAIN)
+  STARTUP.OBJ (?C_STARTUP)
+  UART.OBJ (UART)
+
+
+LINK MAP OF MODULE:  MAIN (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0029H     UNIT         ?PR?MAIN?MAIN
+            CODE    0829H     0018H     UNIT         ?PR?UARTINIT?UART
+            CODE    0841H     0011H     UNIT         ?PR?_PUTCHAR?UART
+            CODE    0852H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   MAIN (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?UART
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0061H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=97
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
